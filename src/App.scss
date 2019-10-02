@@ -1,0 +1,27 @@
+.App{
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  &__header{
+    height: 105px;
+  }
+  &__footer{
+    height: 40px;
+  }
+}
+
+.header{
+  &__to-month{}
+  &__week-day{}
+  &__date{}
+}
+
+.footer{
+  &__shortcut{
+
+  }
+  &__icon{
+    height: 40vmin;
+  }
+}
