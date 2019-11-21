@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Meal from './components/Meal';
+import {Switch, Route, BrowserRouter, Redirect} from 'react-router-dom';
+import GeoPosition from "components/UI/Geoposition";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+          <Switch>
+            <Route path='/add-meal'>
+              <Meal/>
+            </Route>
+            <Route path='/map'>
+              <GeoPosition/>
+            </Route>
+            <Redirect exact from="/" to="add-meal" />
+          </Switch>
+        </BrowserRouter>
+    );
 }
 
 export default App;

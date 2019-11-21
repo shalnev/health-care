@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px 0 10px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0 88px 0;
+
+  &__button {
+    width: 100px;
+    height: 36px;
+    background: #000000;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: white;
+  }
+}
+
+.card {
+  padding: 40px 27px 40px 27px;
+  border-radius: 10px;
+  background: grey;
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    margin: 0 0 20px 0;
+  }
+}
