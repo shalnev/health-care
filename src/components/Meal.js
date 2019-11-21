@@ -1,19 +1,10 @@
 import React from 'react';
-import './Meal.scss';
-import {HUNGER_STATES} from "../const";
-
-function RepeatableDropdown(props) {
-    return (
-        <select className={props.className}>
-            <option value='' disabled selected>{props.placeholder}</option>
-            {props.items.map(item => <option value={item}>{item}</option>)}
-        </select>
-    )
-}
+import 'components/Meal.scss'
+import {HUNGER_STATES} from "const";
+import RepeatableSelector from "components/UI/RepeatableSelector";
+import {Link} from "react-router-dom";
 
 function Meal() {
-
-
     return (
         <div className="wrapper">
             <section className="header">
@@ -24,13 +15,13 @@ function Meal() {
                 <button className="card__item" aria-label="add new record">
                     <span aria-label="plus" role="img">➕ add new record</span>
                 </button>
-                <RepeatableDropdown className="card__item" placeholder="Hungry" items={HUNGER_STATES}/>
-                <RepeatableDropdown className="card__item" placeholder="After meals" items={HUNGER_STATES}/>
+                <RepeatableSelector className="card__item" placeholder="Hungry" items={HUNGER_STATES}/>
+                <RepeatableSelector className="card__item" placeholder="After meals" items={HUNGER_STATES}/>
                 <div className="card__item">
-                    <input name="time"/>
-                    <input name="date" />
+                    <input placeholder="time" type="time" name="time"/>
+                    <input placeholder="date" type="date" name="date"/>
                 </div>
-                <div className="card__item" name="location"/>
+                <Link to='/map'>Выбрать место</Link>
                 <textarea className="card__item" placeholder="feelings, party"/>
             </section>
         </div>
